@@ -1,5 +1,17 @@
+Menu, Qmenu, Add, =vlookup(, Qmenuhandler
+Menu, Qmenu, Add, =exact(, Qmenuhandler
+Menu, Qmenu, Add, =concatenate(, Qmenuhandler
+Menu, Qmenu, Add, =left(find("."`,A1`)-1`), Qmenuhandler
+Menu, Qmenu, Add, =index(XX:YY`,match`(, Qmenuhandler
+
+Qmenuhandler:
+Send, %A_ThisMenuItem%
+return
+
+F13::Menu, Qmenu, Show
+
 ; vlookup command formula for Excel
-F13::SendRaw, =vlookup(
+;F13::SendRaw, =vlookup(
 
 ; dd/MM/yyyy
 F14::
@@ -72,7 +84,7 @@ else
     WinActivate ahk_class CabinetWClass ;you have to use WinActivatebottom if you didn't create a window group.
 Return
 
-F24::Winset, Alwaysontop, , A
+F24::Send F24
 
 ;qmk     |   ahk
 ;---------------
@@ -89,4 +101,10 @@ SC079::Send KC_INT4
 ctrl & F13::Send {Volume_Up 2}
 ctrl & F14::Send CTRL_F14
 ctrl & F15::Send CTRL_F15
-ctrl & F16::Send CTRL_F16
+
+; quick reload
+ctrl & F16::
+ToolTip, Autohotkey reloaded!
+sleep, 1000
+ToolTip
+Return
