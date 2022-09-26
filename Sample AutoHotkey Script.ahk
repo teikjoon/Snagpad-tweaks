@@ -1,3 +1,4 @@
+; Quick menu for commonly used Excel formulas
 Menu, Qmenu, Add, =vlookup(, Qmenuhandler
 Menu, Qmenu, Add, =exact(, Qmenuhandler
 Menu, Qmenu, Add, =concatenate(, Qmenuhandler
