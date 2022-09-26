@@ -104,6 +104,7 @@ ctrl & F15::Send CTRL_F15
 
 ; quick reload
 ctrl & F16::
+Reload
 ToolTip, Autohotkey reloaded!
 sleep, 1000
 ToolTip
