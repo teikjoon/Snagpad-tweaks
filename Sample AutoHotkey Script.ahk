@@ -1,4 +1,3 @@
-; Quick menu for commonly used Excel formulas
 Menu, Qmenu, Add, =vlookup(, Qmenuhandler
 Menu, Qmenu, Add, =exact(, Qmenuhandler
 Menu, Qmenu, Add, =concatenate(, Qmenuhandler
@@ -6,13 +5,10 @@ Menu, Qmenu, Add, =left(find("."`,A1`)-1`), Qmenuhandler
 Menu, Qmenu, Add, =index(XX:YY`,match`(, Qmenuhandler
 
 Qmenuhandler:
-Send, %A_ThisMenuItem%
+SendRaw, %A_ThisMenuItem%
 return
 
 F13::Menu, Qmenu, Show
-
-; vlookup command formula for Excel
-;F13::SendRaw, =vlookup(
 
 ; dd/MM/yyyy
 F14::
@@ -105,7 +101,6 @@ ctrl & F15::Send CTRL_F15
 
 ; quick reload
 ctrl & F16::
-Reload
 ToolTip, Autohotkey reloaded!
 sleep, 1000
 ToolTip
